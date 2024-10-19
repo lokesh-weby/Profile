@@ -1,0 +1,121 @@
+:root{
+    --bg:black;
+    --color:white;
+    --img:url("https://wallpaperaccess.com/full/3982650.jpg")
+}
+body{
+    font-family: Orbitron;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: var(--img);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card{
+    cursor: pointer;
+    border: 2px solid var(--color);
+    height: 500px;
+    border-radius: 20px;
+    width: 400px;
+    margin: 0 auto;
+   background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    transition: 0.2s linear;
+    overflow: hidden;
+    color: var(--color);
+}
+.card::after{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    left: -600px;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(90deg,transparent,white,transparent);
+    animation: 1s glitter ease-in-out;
+}
+
+@keyframes glitter {
+    to{
+        left: 600px;
+    }
+}
+
+
+img{
+    height: 130px;
+    width: 130px;
+    border-radius:50%;
+    border: 3px solid var(--color);
+    filter: brightness(0.8);
+}
+.user-info{
+    padding: 0px 20px;
+    width: 100%;
+    text-align: center;
+}
+ul{
+    all: unset;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+ul li{
+    list-style: none;
+    font-size: 2rem;
+}
+.user-info button{
+    /* #fcaf3c */
+    font-family: Orbitron;
+    margin: 20px 0px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color);
+    color:var(--bg) ;
+    font-size: 1.3rem;
+    transition: 0.2s linear;
+    &:hover{
+        border: 2px solid var(--color);
+    background-color: var(--bg);
+    color:  var(--color);
+    box-shadow: 5px 5px var(--color);
+
+    }
+}
+p i{
+    font-size: 1.2rem;
+    margin: 0px 5px;
+}
+li i{
+    
+    height: max-content;
+    width: max-content;
+    border-radius: 50%;
+    padding: 10px;
+    /* background-color: #fcaf3c; */
+        color: var(--color);
+    transition: 0.2s linear;
+    &:hover{
+        background-color:var(--color);
+        color:var(--bg) ;
+    }
+}
+button i{
+    margin: 0px 5px;
+}
+
+@media screen and (max-width:700px){
+    .card{
+        scale: 0.9;
+    }
+}
